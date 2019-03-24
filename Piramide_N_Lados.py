@@ -3,7 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GL import *
 import math
 
-lados = 4
+lados = 25
 
 # vertices = (
 #     (-1, 0, 1), #0
@@ -41,7 +41,10 @@ def Piramide():
 
     glBegin(GL_LINE_LOOP)
     for l in range(lados):
-        glColor3fv(cores[l])
+        if l > 6:
+            glColor3fv((1,0.5,0.5))
+        else:
+            glColor3fv(cores[l])
         glVertex3f(math.cos((2*math.pi*l)/lados), 0, math.sin((2*math.pi*l)/lados))
         glVertex3f(0, 2, 0)
 
