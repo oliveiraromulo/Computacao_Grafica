@@ -38,14 +38,26 @@ def Piramide():
     glEnd()
 
     glBegin(GL_LINE_LOOP)
-    glVertex3f(-1, 0, 1)
-    glVertex3f(-1, 0,-1)
+    glVertex3f(-1, 0, 1)#0
+    glVertex3f(-1, 0,-1)#1
     glVertex3f( 0, 2, 0)
     glEnd()
 
     glBegin(GL_LINE_LOOP)
-    glVertex3f(-1, 0, 1)
-    glVertex3f( 1, 0, 1)
+    glVertex3f(-1, 0, 1)#0
+    glVertex3f( 1, 0, 1)#3
+    glVertex3f( 0, 2, 0)
+    glEnd()
+
+    glBegin(GL_LINE_LOOP)
+    glVertex3f( 1, 0,-1)#2
+    glVertex3f(-1, 0,-1)#1
+    glVertex3f( 0, 2, 0)
+    glEnd()
+
+    glBegin(GL_LINE_LOOP)
+    glVertex3f( 1, 0,-1)#2
+    glVertex3f( 1, 0, 1)#3
     glVertex3f( 0, 2, 0)
     glEnd()
 
