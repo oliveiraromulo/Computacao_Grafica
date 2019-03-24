@@ -3,40 +3,48 @@ from OpenGL.GLU import *
 from OpenGL.GL import *
 import math
 
-lados = 10
+lados = 4
 
-vertices = (
-    (-1, 0, 1), #0
-    (-1, 0,-1), #1
-    ( 1, 0,-1), #2
-    ( 1, 0, 1), #3
-    ( 0, 1, 0), #BICO_PIRAMIDE = 4
-)
+# vertices = (
+#     (-1, 0, 1), #0
+#     (-1, 0,-1), #1
+#     ( 1, 0,-1), #2
+#     ( 1, 0, 1), #3
+#     ( 0, 1, 0), #BICO_PIRAMIDE = 4
+# )
 
-linhas = (
-    (0,1),
-    (0,3),
-    (2,1),
-    (2,3),
-    (0,4),
-    (1,4),
-    (2,4),
-    (3,4),
-)
+# linhas = (
+#     (0,1),
+#     (0,3),
+#     (2,1),
+#     (2,3),
+#     (0,4),
+#     (1,4),
+#     (2,4),
+#     (3,4),
+# )
 
-faces = (
-    (0, 1, 2, 3)
-)
+# faces = (
+#     (0, 1, 2, 3)
+# )
 
 cores = ( (1,0,0),(1,1,0),(0,1,0),(0,1,1),(0,0,1),(1,0,1),(0.5,1,1),(1,0,0.5) )
 
 
 def Piramide():
-    print('Pi: ', math.pi)
-    glColor3fv((1,0,0))
-    for l in lados:
-        glBegin(GL_LINE_LOOP)
-        glVertex3f(cos((2*math.pi)/l), 0, sin((2*math.pi)/l))
+    #Base da Piramide
+    glBegin(GL_LINE_LOOP)
+    for l in range(lados):
+        glVertex3f(math.cos((2*math.pi*l)/lados), 0, math.sin((2*math.pi*l)/lados))
+    glEnd()
+
+
+    glBegin(GL_LINE_LOOP)
+    for l in range(lados):
+        glColor3fv(cores[l])
+        glVertex3f(math.cos((2*math.pi*l)/lados), 0, math.sin((2*math.pi*l)/lados))
+        glVertex3f(0, 2, 0)
+
     glEnd()
 
 def melancia():
