@@ -3,7 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GL import *
 import math
 
-lados = 25
+vertices = 25
 
 # vertices = (
 #     (-1, 0, 1), #0
@@ -34,18 +34,18 @@ cores = ( (1,0,0),(1,1,0),(0,1,0),(0,1,1),(0,0,1),(1,0,1),(0.5,1,1),(1,0,0.5) )
 def Piramide():
     #Base da Piramide
     glBegin(GL_LINE_LOOP)
-    for l in range(lados):
-        glVertex3f(math.cos((2*math.pi*l)/lados), 0, math.sin((2*math.pi*l)/lados))
+    for l in range(vertices_base):
+        glVertex3f(math.cos((2*math.pi*l)/vertices_base), 0, math.sin((2*math.pi*l)/vertices_base))
     glEnd()
 
 
     glBegin(GL_LINE_LOOP)
-    for l in range(lados):
+    for l in range(vertices_base):
         if l > 6:
             glColor3fv((1,0.5,0.5))
         else:
             glColor3fv(cores[l])
-        glVertex3f(math.cos((2*math.pi*l)/lados), 0, math.sin((2*math.pi*l)/lados))
+        glVertex3f(math.cos((2*math.pi*l)/vertices_base), 0, math.sin((2*math.pi*l)/vertices_base))
         glVertex3f(0, 2, 0)
 
     glEnd()
@@ -65,7 +65,7 @@ def timer(i):
 glutInit(sys.argv)
 glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE)
 glutInitWindowSize(800,600)
-glutCreateWindow("PIRAMIDE_N LADOS")
+glutCreateWindow("PIRAMIDE_N vertices_base")
 glutDisplayFunc(melancia)
 glEnable(GL_MULTISAMPLE)
 glEnable(GL_DEPTH_TEST)
