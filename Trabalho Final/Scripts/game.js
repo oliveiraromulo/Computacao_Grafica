@@ -7,17 +7,17 @@ var bloco1DirY = 0, bloco2DirY = 0, blocoVelocidade = 3;
 
 
 var bola, bloco1, bloco2;
-var bolaDirX = 1, bolaDirY = 1, bolaVelocidade = 2;
+var bolaDirX = 1, bolaDirY = 1, bolaVelocidade = 3;
 
 var score1 = 0, score2 = 0, maxScore = 7;
 
 // Nivel de dificuldade do oponente
-var difficulty = 0.2;
+var difficulty = 0.3;
 
 
 function setup()
 {
-	document.getElementById("winnerBoard").innerHTML = "First to " + maxScore + " wins!";
+	document.getElementById("winnerBoard").innerHTML = "Primeiro a marcar" + maxScore + " ganha!";
 	
 	score1 = 0;
 	score2 = 0;
@@ -67,17 +67,17 @@ function cria_cenario()
 	var bloco1Material =
 	  new THREE.MeshLambertMaterial(
 		{
-		  color: 0x1B32C0
+		  color: 0x4e1c1c
 		});
 	var bloco2Material =
 	  new THREE.MeshLambertMaterial(
 		{
-		  color: 0xFF4045
+		  color: 0x33b275
 		});
 	var planeMaterial =
 	  new THREE.MeshLambertMaterial(
 		{
-		  color: 0x4BD121
+		  color: 0x7c9287
 		});
 	var tableMaterial =
 	  new THREE.MeshLambertMaterial(
