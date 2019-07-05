@@ -1,0 +1,15 @@
+Trabalho Final de Computação Gráfica
+
+Arquivos:
+
+index.html
+Esse arquivo realiza a execução do jogo no browser. Carrega os scripts que contem toda a inteligencia por trás do jogo.
+
+game.js
+Esse arquivo contem toda a parte de renderização da imagem, dos objetos, o calculo das físicas dos contatos entre os objetos, da iluminação do cenario e dos avisos definidos para cada jogador
+
+keyboard.js
+Contem os comandos de interação com o teclado para jogar.
+
+three.min.js
+Contem as funções necessarias para o uso do pacote ThreeJS
